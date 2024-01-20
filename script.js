@@ -21,21 +21,25 @@ function renderRepositories() {
 
   $("#repositories").empty();
   currentRepositories.forEach((repo) => {
-    const topicsContent = (repo.topics.length>0)
-      ? repo.topics
-          .map(
-            (item, index) =>
-              `<button type="button" class="btn btn-primary">${item}</button>`
-          )
-          .join(" ")
-      : `<button type="button" class="btn btn-primary">No Topics</button>`;
+    const topicsContent =
+      repo.topics.length > 0
+        ? repo.topics
+            .map(
+              (item, index) =>
+                `<button type="button" class="btn btn-primary">${item}</button>`
+            )
+            .join(" ")
+        : `<button type="button" class="btn btn-primary">No Topics</button>`;
     const repoElement = `<div class="col-md-6">
                             <div class="card mb-3">
                               <div class="card-body">
                                 <h5 class="card-title text-primary">${
-                                  repo.name
+                                  repo.name || "No Repository Name"
                                 }</h5>
-                                <p class="card-text">${repo.description}</p>
+                                <p class="card-text">${
+                                  repo.description ||
+                                  "No Repository Description"
+                                }</p>
                                 ${topicsContent}
                               </div>
                             </div>
