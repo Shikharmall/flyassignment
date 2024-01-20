@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  border: #333 solid 1px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.loaderdiv {
+  display: flex;
+  justify-content: center; /* Align items horizontally in the center */
+  align-items: center; /* Align items vertically in the center */
+ /* height: 100vh; /* Optional: Set a height for the container */
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  display: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.repository {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+}
+
+.pagination li {
+  /*margin-right: 10px;*/
+  cursor: pointer;
+}
+
+.pagination li.active {
+  font-weight: bold;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+  grid-template-rows: repeat(
+    2,
+    100px
+  ); /* Two rows with a fixed height of 100px */
+  gap: 10px; /* Gap between grid items */
+}
+
+.grid-item {
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: center;
+}
